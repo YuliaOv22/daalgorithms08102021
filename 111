@@ -140,7 +140,7 @@ class MyDecisionTree:
         quality, t, index = self.find_best_split(data, labels, self.min_leaf)
 
         #  Базовый случай - прекращаем рекурсию, когда нет прироста в качества
-        if quality == 0 or min_depth > self.max_depth or self.leaves_count >= self.max_leaves-1:
+        if (quality == 0) or (min_depth > self.max_depth) or (self.leaves_count >= self.max_leaves-1):
             self.leaves_count += 1
             return Leaf(data, labels)
 
